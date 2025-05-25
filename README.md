@@ -42,6 +42,6 @@ graph TD
     end
 
     %% Data Flow
-    N -->|API Call| H
+    N -->|API Call|
     K --> Q[Update Map in Real-Time]
     ```
