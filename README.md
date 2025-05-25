@@ -22,6 +22,7 @@ A[User opens website] --> B[Raspberry Pi serves webpage]
 A --> C[Website requests Bluetooth access]
 C --> D{Yes}
 C --> E{No}
+E --> K[Close website]
 D --> F[Phone scans for the beacons]
 F --> G[Client reads RSSI from found beacons]
 G --> H[Client sends {beacon-ID, RSSI} pairs via WebSocket to Raspberry Pi]
