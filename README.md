@@ -29,12 +29,10 @@ graph TD
     G --> H[Plot Positions on Leaflet Map]
 
     %% Backend Flow (Optional)
-    H --> I{Backend Enabled?}
-    I -->|Yes| J[Send Anonymized Data to Server]
-    I -->|No| K[Render Locally Only]
+    H --> I[Send Anonymized Data to Server]
 
     %% Server-Side Processing
-    J --> L[Store in SQLite Database]
+    I --> L[Store in SQLite Database]
     L --> M[Aggregate Foot Traffic Data]
     M --> N[Generate Heatmaps]
 
