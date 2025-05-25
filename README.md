@@ -21,7 +21,7 @@ graph TD
     A[User Opens Website] --> B[Request Bluetooth Access]
     B --> C{Granted?}
     C -->|Yes| D[Start Scanning]
-    C -->|No| E[Show Error Message]
+    C -->|No| E[Close]
 
     %% Bluetooth Scanning
     D --> F[Detect Nearby Devices]
@@ -29,19 +29,20 @@ graph TD
     G --> H[Plot Positions on Leaflet Map]
 
     %% Backend Flow (Optional)
-    H --> I[Send Anonymized Data to Server]
+    H --> I{Backend Enabled?}
+    I --> J[Send Anonymized Data to Server]
 
     %% Server-Side Processing
-    I --> L[Store in SQLite Database]
+    J --> L[Store in SQLite Database]
     L --> M[Aggregate Foot Traffic Data]
     M --> N[Generate Heatmaps]
 
     %% Beacon Integration
-    subgraph "Bluetooth Beacons"
+    subgraph Bluetooth Beacons
         O[Beacon Broadcasts ID] --> F
     end
 
     %% Data Flow
-    N -->|API Call|
+    N --> H
     K --> Q[Update Map in Real-Time]
     ```
