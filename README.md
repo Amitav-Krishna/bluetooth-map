@@ -39,7 +39,7 @@ graph TD
     M --> N[Generate Heatmaps]
 
     %% Beacon Integration
-    subgraph "Bluetooth Beacons (Old Phones)"
+    subgraph "Bluetooth Beacons"
         O[Beacon Broadcasts ID] --> F
     end
 
