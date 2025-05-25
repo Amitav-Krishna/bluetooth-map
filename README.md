@@ -7,11 +7,9 @@ A website that visualizes foot traffic nearby by allowing people to connect to a
   - **Visualization**: Canvas API
 
 ### Backend
-  - **Database**: MongoDB
+  - **Database**: SQLite
   - **Server**: Node.js with Express.js
 
-## Features
-  - **Server**
-    - Node.js + Express
-  - **Database**
-    - SQLIte
+### Bluetooth Beacons
+  - **Phones**: [Bluetooth Simulator](https://apkpure.com/beacon-simulator/net.alea.beaconsimulator)
+  - **Server(Raspberry Pi)**: Node.js + Express.js
