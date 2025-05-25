@@ -16,16 +16,13 @@ A website that visualizes foot traffic nearby by allowing people to connect to a
 
 
 ## Project Flow
-```mermaid
 graph TD
-A[User opens website] --> B[Raspberry Pi serves webpage]
-A --> C[Website requests Bluetooth access]
-C --> D{Yes}
-C --> E{No}
-E --> K[Close website]
-D --> F[Phone scans for the beacons]
-F --> G[Client reads RSSI from found beacons]
-G --> H[Client sends {beacon-ID, RSSI} pairs via WebSocket to Raspberry Pi]
-H --> I[Raspberry Pi broadcasts positions to all clients via WebSocket]
-I --> J[Client renders dots on a simple HTML canvas]
-```
+    A[User opens website] --> B[RPi serves static page]
+    B --> C[Client scans BLE beacons]
+    C --> D[Client sends RSSI data via WS]
+    D --> E[RPi calculates positions]
+    E --> F[RPi broadcasts via WS]
+    F --> G[Client renders on canvas]
+    
+    style A fill:#9f9,stroke:#333
+    style G fill:#f9f,stroke:#333
