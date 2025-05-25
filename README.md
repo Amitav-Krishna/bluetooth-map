@@ -28,3 +28,22 @@ graph TD
     style A fill:#9f9,stroke:#333
     style G fill:#f9f,stroke:#333
 ```
+
+## Directory Structure
+```
+/ble-tracker/
+├── server/                 # Raspberry Pi backend
+│   ├── app.py              # Main Flask + WebSocket server
+│   ├── trilateration.py    # Position calculation logic
+│   └── requirements.txt    # Python dependencies
+│
+├── client/                 # All frontend files
+│   ├── index.html          # Single HTML file
+│   ├── style.css           # Minimal styling
+│   └── app.js              # BLE + WebSocket logic
+│
+├── config/
+│   └── beacons.json        # Beacon IDs and fixed positions
+│
+└── README.md               # Setup instructions
+```
