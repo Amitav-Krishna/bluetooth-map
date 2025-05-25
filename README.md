@@ -15,34 +15,12 @@ A website that visualizes foot traffic nearby by allowing people to connect to a
   - **Server(Raspberry Pi)**: Node.js + Express.js
 
 ## Project Flow
-``` mermaid
+```mermaid
 graph TD
-    %% User Interaction
-    A[User Opens Website] --> B[Request Bluetooth Access]
-    B --> C{Granted?}
-    C -->|Yes| D[Start Scanning]
-    C -->|No| E[Close]
-
-    %% Bluetooth Scanning
-    D --> F[Detect Nearby Devices]
-    F --> G[Estimate Distance via RSSI]
-    G --> H[Plot Positions on Leaflet Map]
-
-    %% Backend Flow (Optional)
-    H --> I{Backend Enabled?}
-    I --> J[Send Anonymized Data to Server]
-
-    %% Server-Side Processing
-    J --> L[Store in SQLite Database]
-    L --> M[Aggregate Foot Traffic Data]
-    M --> N[Generate Heatmaps]
-
-    %% Beacon Integration
-    subgraph Bluetooth Beacons
-        O[Beacon Broadcasts ID] --> F
-    end
-
-    %% Data Flow
-    N --> H
-    K --> Q[Update Map in Real-Time]
-    ```
+A[User visits website] --> B[Raspberry Pi sends client-side code to client]
+C[User connect to the three beacons] --> D[User sends real-time RSSIs of beacon connections to Raspberry Pi]
+D --> E[Raspberry Pi uses all RSSIs in order to calculate the relative location of the devices]
+E --> F[Raspberry Pi sends the relative locations of all of the devices to the client]
+F --> G[Client renders map of devices]
+B --> G
+```
