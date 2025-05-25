@@ -31,7 +31,7 @@ graph TD
 
 ## Directory Structure
 ```
-/ble-tracker/
+/bluetooth-map/
 ├── server/                 # Raspberry Pi backend
 │   ├── app.py              # Main Flask + WebSocket server
 │   ├── trilateration.py    # Position calculation logic
