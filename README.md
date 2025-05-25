@@ -16,6 +16,7 @@ A website that visualizes foot traffic nearby by allowing people to connect to a
 
 
 ## Project Flow
+```mermaid
 graph TD
     A[User opens website] --> B[RPi serves static page]
     B --> C[Client scans BLE beacons]
@@ -26,3 +27,4 @@ graph TD
     
     style A fill:#9f9,stroke:#333
     style G fill:#f9f,stroke:#333
+```
