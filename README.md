@@ -24,7 +24,7 @@ graph TD
     D --> E[RPi calculates positions]
     E --> F[RPi broadcasts via WS]
     F --> G[Client renders on canvas]
-    
+
     style A fill:#9f9,stroke:#333
     style G fill:#f9f,stroke:#333
 ```
